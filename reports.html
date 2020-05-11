@@ -13,20 +13,20 @@
   <body>
   	<header>
   		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #63c5f2;">
-		  <a class="navbar-brand" href="#top">Argentina Finances</a>
+		  <a class="navbar-brand" href="home.html">Argentina Finances</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarText">
 		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="#top">Dashboard<span class="sr-only">(current)</span></a>
+		      <li class="nav-item">
+		        <a class="nav-link" href="home.html">Dashboard</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="expenses.html">Expenses</a>
 		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="reports.html">Reports</a>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#top">Reports<span class="sr-only">(current)</span></a>
 		      </li>
 		    </ul>
 		    <span class="navbar-text d-none d-lg-block d-xl-block">
@@ -37,14 +37,23 @@
   	</header>
 
    	<div id="main-content" class="container">
-   		<h1>Dashboard</h1>
+   		<h1>Reports</h1>
 
-   		<div class="container">
-		  <div class="row">
-		    <div class="col-md-4 col-sm-8">Total Group Expenses</div>
-		    <div class="col-md-4 col-sm-4">10.245 </div>
-		  </div>
-		</div>
+   		<section class="row">
+	      <div class="col-lg-4 col-md-6">
+	      	<h3>Highest Spender<h3>
+	        <img id="profilePic" src="https://www.vhv.rs/dpng/d/256-2569650_men-profile-icon-png-image-free-download-searchpng.png" width="100px">
+	        <div id="spender"></div>
+	      </div>
+	      <div class="col-lg-4 col-md-6">
+	      	<h3>Expenses per Category<h3>
+	        <canvas id="pieChart"></canvas>
+	      </div>
+		  <div class="col-lg-4 col-md-12">
+		  	<h3>Expenses per Person<h3>
+	        <canvas id="barChart"></canvas>
+	      </div>
+  		</section>   		
 
    	</div><!-- End of #main-content -->
 
@@ -59,7 +68,11 @@
 
 
   	<!-- jQuery (Bootstrap JS plugins depend on it) -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>  	<script src="js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>  	
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/ajax-utils.js"></script>
   	<script src="js/script.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  	<script src="js/Charts.js"></script>
   </body>
 </html>
