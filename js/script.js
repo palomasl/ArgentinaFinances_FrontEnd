@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded",
 function() {
     $ajaxUtils
-      .sendGetRequest("data/totalGroupExpenses.json",
+      .sendGetRequest("https://argentina-finance.herokuapp.com/expenses/total",
         function (response) {
         var total = response.amount;
 
@@ -26,98 +26,31 @@ document.addEventListener("DOMContentLoaded",
   } 
 );//--End of Reports Page
 
-//Expenses Page - Insert table snippet
+//Expenses Page - Loop
 document.addEventListener("DOMContentLoaded",
-function() {
+  function() {
     $ajaxUtils
-      .sendGetRequest("snippets/tableRows.html",
+      .sendGetRequest("data/expensesTable.json",
         function (response) {
-        var rowHTML = response;
-
+        var expenses = response;
+        var table = "";
+        for (var i = 0; i < expenses.length; i++) {
+          table += "<tr>" + 
+          "<td>" + expenses[i].category + "</td>" +
+          "<td>" + expenses[i].name + "</td>" +
+          "<td>" + expenses[i].cost + "</td>" +
+          "<td>" + expenses[i].date + "</td>" +
+          "<td>" + expenses[i].payer + "</td>" +
+          "<td>" + expenses[i].shareWith.join(', ') + "</td>" +
+          "</tr>";
+        }
         document.querySelector("tbody")
-            .innerHTML = rowHTML;   
-        }, false);
-  }
-);
-
-//Expenses Page - Insert data from JSON
-document.addEventListener("DOMContentLoaded",
-function() {
-    $ajaxUtils
-      .sendGetRequest("data/expensesTable.json",
-        function (response) {
-        var category = response[0].category;
-
-        document.querySelector("#category")
-            .innerHTML = category;   
+            .innerHTML = table; 
         });
   }
 );
 
-document.addEventListener("DOMContentLoaded",
-function() {
-    $ajaxUtils
-      .sendGetRequest("data/expensesTable.json",
-        function (response) {
-        var expName = response[0].expName;
 
-        document.querySelector("#expName")
-            .innerHTML = expName;   
-        });
-  }
-);
-
-document.addEventListener("DOMContentLoaded",
-function() {
-    $ajaxUtils
-      .sendGetRequest("data/expensesTable.json",
-        function (response) {
-        var cost = response[0].cost;
-
-        document.querySelector("#cost")
-            .innerHTML = cost;   
-        });
-  }
-);
-
-document.addEventListener("DOMContentLoaded",
-function() {
-    $ajaxUtils
-      .sendGetRequest("data/expensesTable.json",
-        function (response) {
-        var date = response[0].date;
-
-        document.querySelector("#date")
-            .innerHTML = date;   
-        });
-  }
-);
-
-document.addEventListener("DOMContentLoaded",
-function() {
-    $ajaxUtils
-      .sendGetRequest("data/expensesTable.json",
-        function (response) {
-        var payer = response[0].payer;
-
-        document.querySelector("#payer")
-            .innerHTML = payer;   
-        });
-  }
-);
-
-document.addEventListener("DOMContentLoaded",
-function() {
-    $ajaxUtils
-      .sendGetRequest("data/expensesTable.json",
-        function (response) {
-        var sharedWith = response[0].shareWith.join(', ');
-      
-        document.querySelector("#shared")
-            .innerHTML = sharedWith;   
-        });
-  }
-);
 // function constructTable(selector) { 
               
 //             // Getting the all column names 

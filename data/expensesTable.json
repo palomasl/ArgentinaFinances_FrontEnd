@@ -1,6 +1,6 @@
 [{
 		"category": "Test",
-		"expName": "Buenos Aires - Mendoza",
+		"name": "Buenos Aires - Mendoza",
 		"cost": "80",
 		"date": "17.02.2020",
 		"payer": "Paloma",
@@ -8,7 +8,7 @@
 	},
 	{
 		"category": "Plane",
-		"expName": "Buenos Aires - Mendoza",
+		"name": "Buenos Aires - Mendoza",
 		"cost": "80",
 		"date": "17.02.2020",
 		"payer": "Paloma",
