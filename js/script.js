@@ -26,6 +26,20 @@ document.addEventListener("DOMContentLoaded",
   } 
 );//--End of Reports Page
 
+//Expenses Page - Insert table snippet
+document.addEventListener("DOMContentLoaded",
+function() {
+    $ajaxUtils
+      .sendGetRequest("snippets/tableRows.html",
+        function (response) {
+        var rowHTML = response;
+
+        document.querySelector("tbody")
+            .innerHTML = rowHTML;   
+        }, false);
+  }
+);
+
 //Expenses Page - Insert data from JSON
 document.addEventListener("DOMContentLoaded",
 function() {
@@ -45,10 +59,10 @@ function() {
     $ajaxUtils
       .sendGetRequest("data/expensesTable.json",
         function (response) {
-        var name = response[0].name;
+        var expName = response[0].expName;
 
         document.querySelector("#expName")
-            .innerHTML = name;   
+            .innerHTML = expName;   
         });
   }
 );
