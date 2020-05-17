@@ -1,0 +1,30 @@
+[
+	{
+		"category": "Plane",
+		"amount": 5624
+	},
+	{
+		"category": "Hotel",
+		"amount": 3999
+	},	
+	{
+		"category": "Groceries",
+		"amount": 1200
+	},
+	{
+		"category": "Taxi",
+		"amount": 569
+	},
+	{
+		"category": "Restaurants",
+		"amount": 4300
+	},
+	{
+		"category": "Tickets",
+		"amount": 230
+	},
+	{
+		"category": "Others",
+		"amount": 780
+	}
+]

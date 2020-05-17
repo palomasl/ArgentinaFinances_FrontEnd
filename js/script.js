@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded",
 );
 
 
+
 // function constructTable(selector) { 
               
 //             // Getting the all column names 
